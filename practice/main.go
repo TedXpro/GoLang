@@ -30,7 +30,27 @@ func main() {
 	// firstName, secondName = getInitials("Henock");
 	// fmt.Println(firstName, secondName);
 
-	mapsPractice();
+	// mapsPractice();
+
+	pointerPractice();
+}
+
+func updateName(x *string){
+	*x = "luigi";
+}
+
+func pointerPractice(){
+	name := "mario";
+	fmt.Println(name);
+
+	namePtr := &name;
+	fmt.Println("the memory address of name is:", namePtr);
+	fmt.Println("the value its pointing to is:", *namePtr);
+
+	updateName(namePtr);
+
+	fmt.Println("name pointer", *namePtr);
+	fmt.Println("name value", name);
 }
 
 func mapsPractice(){
