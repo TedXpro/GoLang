@@ -24,12 +24,34 @@ func main() {
 	// names := []string{"mario", "Yoshi", "luigi", "wario"};
 	// cycleNames(names, helper);
 
-	firstName, secondName := getInitials("Yohannes Woldeyes");
-	fmt.Println(firstName, secondName);
+	// firstName, secondName := getInitials("Yohannes Woldeyes");
+	// fmt.Println(firstName, secondName);
 
-	firstName, secondName = getInitials("Henock");
-	fmt.Println(firstName, secondName);
+	// firstName, secondName = getInitials("Henock");
+	// fmt.Println(firstName, secondName);
 
+	mapsPractice();
+}
+
+func mapsPractice(){
+	menu := map[string]float64{
+		"soup" : 4.99,
+		"pie" : 7.99,
+		"salad" : 10.99,
+	}
+
+	fmt.Println(menu);
+	fmt.Println(menu["pie"]);
+
+	for k , v := range menu {
+		fmt.Println(k, "-" , v);
+	}
+
+	if _, ok := menu["soup"]; ok{
+		fmt.Println("updating the value of 'soup'");
+		menu["soup"] = 5.99;
+		fmt.Println(menu);
+	}
 }
 
 func getInitials(name string) (string, string) {
